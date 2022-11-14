@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hw01-prep</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="과제01-준비하기">과제01: 준비하기</h1>
+<p>언어 데이터 처리 2022-11-08 유현조</p>
+<h2 id="할-일">할 일</h2>
+<p>수업 시간에 소개된 다음 소프트웨어들을 설치하여 컴퓨팅 환경을
+구축한다.</p>
+<ul>
+<li>Visual Studio Code</li>
+<li>명령행 도구
+<ul>
+<li>Linux를 설치하거나</li>
+<li>macOS의 경우: Terminal.app 사용. Bash 사용. brew 설치</li>
+<li>Microsoft Windows의 경우: Cygwin 또는 WSL 설치</li>
+</ul></li>
+<li>가상 머신에 Ubuntu 설치</li>
+<li>Markdown 설치와 문법 익히기
+<ul>
+<li>Visual Studio Code에서 Markdown 확장팩 설치</li>
+<li>기타 원하는 경우 Markdown 편집기 설치</li>
+</ul></li>
+<li>글꼴: D2Coding 설치</li>
+<li>Python 3 설치</li>
+<li>LibreOffice 설치</li>
+</ul>
+<h2 id="보고서-작성법">보고서 작성법</h2>
+<p>설치 및 설정 과정을 정리하여 보고서로 작성하여 제출한다.</p>
+<ul>
+<li>Markdown으로 작성하고 PDF로 출력하여 제출한다. 파일명은
+<code>hw01-prep.pdf</code>로 한다.</li>
+<li>설치 과정과 결과를 보여줄 수 있도록 적절한 스크린샷을 포함하여
+보고서를 작성한다. 스크린샷을 지나치게 많이 찍을 필요는 없다.</li>
+<li>Markdown 문법을 충분히 숙지하여 사용한다. 특히 제목(heading) 문법을
+이용하여 장절을 구분하여 작성하고 목록(list) 문법을 이용하여 개조식으로
+간략하게 설명을 작성하도록 한다.</li>
+<li>설치 과정에서 문제가 발생하였다면 그 자체를 보고서로 작성한다.
+해결하지 못하였더라도 보고서에 해당 내용을 기술한다. 해결하였다면 해결
+과정을 함께 기술한다.</li>
+</ul>
+<h2 id="마크다운-사용법">마크다운 사용법</h2>
+<p>이 과제 지침은 마크다운으로 작성되어 있다. 함께 제공된 md 파일과 pdf
+파일을 참고하면 보고서를 작성할 때 필요한 대부분의 마크다운 문법을 알 수
+있다.</p>
+<ul>
+<li>과제 지침의 pdf 파일은 MarkText라는 마크다운 전용 에디터의
+내보내기(Export) 기능을 이용하여 생성한 것이다.</li>
+<li>이런 전용 에디터를 이용하면 마크다운 문법을 몰라도 메뉴를 이용해서
+문서를 구조화할 수 있다.</li>
+<li>마크다운으로 문서를 작성할 때에는 모양에는 신경쓰지 말고 글의 구조를
+잘 드러낼 수 있도록 작성한다.</li>
+</ul>
+<h3 id="제목">제목</h3>
+<p>제목(heading)은 6단계를 지원하며 <code>#</code> 기호로 시작하면
+된다.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># H1 제목 1 수준</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## H2 제목 2 수</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### H3 제목3</span></span></code></pre></div>
+<h3 id="이미지-첨부">이미지 첨부</h3>
+<p>마크다운 문서에 이미지를 추가하기 위해서 우선 다음과 같이 폴더를
+구성한다.</p>
+<ul>
+<li>보고서 담을 폴더를 만든다. 예를 들어, <code>hw01</code>이라고
+하자.</li>
+<li>해당 폴더 아래에 <code>img</code> 폴더를 만들고 첨부할 이미지 파일을
+보관한다.</li>
+</ul>
+<p>일반적으로 마크다운에서는 다음 문법으로 이미지를 문서에 포함한다.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/screenshot-01.png)</span></span></code></pre></div>
+<p>그러나 이 방법으로는 이미지의 크기를 제어할 수 없다. 다음과 같이 HTML
+코드를 이용하면 이미지의 크기를 마음대로 조절할 수 있다.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;img/screenshot-01.png&quot;</span> <span class="er">width</span><span class="ot">=</span><span class="st">&quot;500&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+<p><img src="img/screenshot-01.png" width="500"></p>
+<h3 id="목록">목록</h3>
+<p>목록에는 번호 있는 목록과 번호 없는 목록이 있다. 번호 없는 목록은
+다음과 같이 만들 수 있다.</p>
+<pre><code>- item
+- item
+- item</code></pre>
+<p>번호 있는 목록은 다음과 같이 만들 수 있다.</p>
+<pre><code>1. item
+2. item
+3. item</code></pre>
+<h3 id="표">표</h3>
+<p>표는 다음과 같이 만들 수 있다.</p>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 31%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">운영체제</th>
+<th style="text-align: center;">Visual Studio Code</th>
+<th style="text-align: center;">Notepad++</th>
+<th style="text-align: center;">BBEdit</th>
+<th style="text-align: center;">gedit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Linux</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">macOS</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Microsoft Windows</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+</tr>
+</tbody>
+</table>
+<h3 id="수식">수식</h3>
+<p>수식도 입력할 수 있다. 문장 중에 수식을 입력할 때에는 <code>$</code>
+기호로 둘러싸 <span class="math inline">\(f(x)=x+1\)</span>과 같이
+입력할 수 있다. 독립적인 행을 차지하는 수식을 입력할 때에는
+<code>$$</code> 기호로 둘러싸면 된다.</p>
+<p><span class="math display">\[
+\sum_{k=1}^n k = \frac{n(n+1)}{2}
+\]</span></p>
+</body>
+</html>
